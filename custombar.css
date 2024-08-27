@@ -1,0 +1,29 @@
+
+.custombar .navbar {
+    text-align: right !important;
+    padding-right: 2% !important;
+    width: 100% !important;
+    height: 130px !important;
+
+}
+
+.custombar .text {
+    text-align: right !important;
+    color: white !important;
+    margin-left: 3% !important;
+    text-transform: uppercase !important;
+    margin-top: 3% !important;
+    font-size: 125% !important;
+
+}
+.custombar .text:hover {
+    color: blue;
+}
+
+.custombar .img {
+    text-align: center !important;
+    position: fixed !important;
+    left: 0% !important;
+    top: 0% !important;
+    height: 40% !important;
+}

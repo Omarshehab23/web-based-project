@@ -1,0 +1,15 @@
+.headline {
+    text-align: center;
+    color: blue;
+    font-size: 219%;
+}
+
+.photo {
+    margin: 1%;
+    width: 20%;
+    height: 20%;
+    text-align: center;
+}
+.center{
+    text-align: center;
+}

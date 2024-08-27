@@ -1,0 +1,34 @@
+.headline {
+    text-align: center;
+    color: white;
+    font-size: 200%;
+    text-transform: uppercase;
+
+}
+
+.headline2 {
+    text-align: center;
+    color: white;
+    font-size: 107%;
+    text-transform: uppercase;
+}
+
+.description {
+    color: white;
+    text-align: center;
+    font-size: 125%;
+    text-transform: uppercase;
+}
+.email{
+    text-align: center;
+    color: white;
+    font-size: 107%;
+    text-transform: uppercase;
+    
+}
+.email:hover{
+    color: blue;    
+}
+.headline2:hover{
+    color: blue;
+}

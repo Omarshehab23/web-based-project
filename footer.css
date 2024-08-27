@@ -1,0 +1,13 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.footerpage {
+    width: 100%;
+    padding: 70px 20px 20px;
+}
+
+.footerlogo {
+    text-align: center;
+}

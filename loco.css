@@ -1,0 +1,40 @@
+.headline {
+    text-align: center;
+    color: white;
+    font-size: 200%;
+    text-transform: uppercase;
+
+}
+.description {
+    color: white;
+    text-align: center;
+    font-size: 125%;
+    text-transform: uppercase;
+}
+
+.headline2 {
+    text-align: center;
+    color: white;
+    font-size: 107%;
+    text-transform: uppercase;
+}
+.location{
+    text-align: center;
+    color: white;
+    font-size: 107%;
+    text-transform: uppercase;
+    
+}
+.location:hover{
+    color: blue;
+}
+table{
+    border-color: white;
+    font-size: 180%;
+    text-transform: uppercase;
+    text-align: center;
+    margin-left:22%;
+    color: white;
+  
+    
+}

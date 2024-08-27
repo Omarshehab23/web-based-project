@@ -1,0 +1,37 @@
+.headline {
+    text-align: center;
+    color:white;
+    font-size: 190%;
+    text-transform: uppercase;
+    
+
+}
+
+.headline2 {
+    text-align: center;
+    color: white;
+    font-size: 125%;
+    text-transform: uppercase;
+    background-color: transparent;
+}
+
+.description {
+    color: white;
+    text-align: center;
+    font-size: 125%;
+    text-transform: uppercase;
+}
+
+.submit {
+    background-color: white;
+    color: black;
+    border: 1;
+    font-size: 140%;
+    width: 7%;
+    
+}
+
+
+.submit:hover {
+    color: red;
+}

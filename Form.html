@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="custombar.css">
+ 
+    <title>Drug test</title>
+
+   
+</head>
+<body background="back.jpg"> 
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <img src="logo.jpg" alt="Bootstrap" width="100" height="130">
+          <a class="navbar-brand" href="#">Pet Hotel</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+              <a class="nav-link active" aria-current="page" href="./about_us.html">About Us</a>
+              <a class="nav-link active" aria-current="page" href="./product-servies.html">Our Services</a>
+              <a class="nav-link active" aria-current="page" href="./contact_us.html">Contact Us</a>
+              <a class="nav-link active" aria-current="page" href="./reviews.html">Reviews</a>
+              <a class="nav-link active" aria-current="page" href="./location.html">Location</a>
+              <a class="nav-link active" aria-current="page" href="./Form.html">Drug test</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+    <div class="container mt-5">
+        <p id="date-time" style="color: white;"></p>
+        <h1 class="text-center" style="color: white;">Drug Dosage Calculator</h1>
+        <p id="date-time" class="text-right"></p>
+
+        <form id="drugTestForm">
+            <div class="form-group">
+                <label for="dose" style="color: white;">Dose (mg):</label>
+                <input type="number" class="form-control" id="dose" placeholder="Enter dose in mg"><span id="message" style="color: red;"> </span>
+
+                <small class="text-danger" id="doseError"></small>
+            </div>
+            <div class="form-group">
+                <label for="weight" style="color: white;">Weight (kg):</label>
+                <input type="number" class="form-control" id="weight" placeholder="Enter weight in kg"><span id="message1" style="color: red;"> </span>
+                <small class="text-danger" id="weightError"></small>
+            </div>
+            <div class="form-group">
+                <label for="drugPercentage" style="color: white;">Drug Percentage (%):</label>
+                <input type="number" class="form-control" id="drugPercentage" placeholder="Enter drug percentage"><span id="message2" style="color: red;"> </span>
+                <small class="text-danger" id="drugPercentageError"></small>
+            </div>
+            <label for="gender" style="color: white;">Gender of the Pet?</label><span id="message3" style="color: red;"> </span>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1" style="color: white;">
+                  Male
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
+                <label class="form-check-label" for="flexRadioDefault2" style="color: white;">
+                  female
+                </label>
+              </div>
+              <br>
+              <label for="vaccine" style="color: white;">is the Pet vaccinated?</label></label><span id="message4" style="color: red;"> </span>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="1" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault" style="color: white;">Yes</label> <br>
+                <input class="form-check-input" type="checkbox" value="2" id="flexCheckchecked">
+                <label class="form-check-label" for="flexCheckDefault" style="color: white;"> No</label>
+              </div>
+            <br>
+            <button type="button" class="btn btn-primary" onclick="calculateDrugTest()">Calculate</button>
+        </form>
+        <hr>
+        <h4 style="color: white;">Calculation Result</h4>
+        <textarea class="form-control" id="result" rows="5" readonly></textarea>
+    </div>
+    <script>
+      
+        function calculateDrugTest() {
+            var dose = parseInt(document.getElementById('dose').value);
+            var weight = parseInt(document.getElementById('weight').value);
+            var drugPercentage = parseInt(document.getElementById('drugPercentage').value);
+            var male = document.getElementById('flexRadioDefault1').checked;
+            var female = document.getElementById('flexRadioDefault2').checked;
+            var vaccineYes = document.getElementById('flexCheckDefault').checked;
+            var vaccineNo = document.getElementById('flexCheckchecked').checked;
+            document.getElementById("message").innerHTML = "";
+            document.getElementById("message1").innerHTML = "";
+            document.getElementById("message2").innerHTML = "";
+            document.getElementById("message3").innerHTML = "";
+            document.getElementById("message4").innerHTML = "";
+            var valid = true;
+            if (dose < 0) {
+        document.getElementById("message").innerHTML = "Dose cannot be less than 1";
+        valid= false;
+            }
+            
+            if (weight < 0) {
+        document.getElementById("message1").innerHTML = "Weight must be greater than 0";
+        valid= false;
+            }
+            
+           if (drugPercentage < 0) {
+        document.getElementById("message2").innerHTML = "Drug Percentage must be greater than 0";
+        valid= false;
+            }
+            
+            if (!male && !female) {
+            document.getElementById("message3").innerHTML = "Please select a gender";
+            valid = false;
+        }
+            if (!vaccineYes && !vaccineNo) {
+                document.getElementById("message4").innerHTML = "At least one checkbox must be selected";
+                valid = false;
+            }
+            
+            if(!valid){
+                return;
+            }
+            
+            var drugtestresult= (dose * weight) / drugPercentage;
+            var resultText = 'Dose: '+dose+' mg\n Weight: ' +weight+ 'kg\n  Drug Percentage: '+drugPercentage+ '%\n Drug Test Result:' +drugtestresult+ 'mg/kg\n  '  ;
+            document.getElementById('result').value = resultText;
+        }
+        function DateTime() {
+            var now = new Date();
+            document.getElementById('date-time').textContent =now;
+           
+        }
+        DateTime();
+    </script>
+
+
+    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+    <br>
+    <br>
+    <div class="footerlogo">
+        <img class="logo" src="logo.jpg" alt="logo" height="150">
+    </div>
+</body>
+</html>
